@@ -143,7 +143,31 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+function removeItem(myGroceryList, item) {
+  var empty = [];
+  if (myGroceryList && item) {
+    for (var i = myGroceryList.length; i > -1; i++) {
+      if (myGroceryList[i] === item) {
+        myGroceryList.splice(i, 1);
+      }
+    }
+    return myGroceryList;
+    }
+  else {
+    return empty;
+  }
+}
+
+function addItem(myGroceryList, item) {
+  var empty = [];
+  if (myGroceryList && item) {
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
+  else {
+    return empty;
+  }
+}
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -321,20 +345,48 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var user = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
-//include this as one of the objects in your array.
 var user1 = {
-    name: 'Tyler McGinnis',
-    email: 'tylermcginnis33@gmail.com',
-    password: 'iLoveJavaScript',
-    username: 'infiniateLoop'
-};
+  name: 'Tyler McGinnis',
+  email: 'tylermcginnis33@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniateLoop'
+}
 
-//Your Code Here
+var user2 = {
+  name: 'Cold Scorpio',
+  email: 'ScorpioSplash@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'
+}
+
+var user3 = {
+  name: 'Val Venis',
+  email: 'Val_Venis@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'  
+}
+
+var user4 = {
+  name: 'I.R.S.',
+  email: 'DeathAndTaxes@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'  
+}
+
+//include this as one of the objects in your array.
+// var user1 = {
+//     name: 'Tyler McGinnis',
+//     email: 'tylermcginnis33@gmail.com',
+//     password: 'iLoveJavaScript',
+//     username: 'infiniateLoop'
+// };
+
+user.push(user1, user2, user3, user4);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -344,6 +396,13 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
+function deletion(arr, username) {
+  for (var i = arr.length; i >= 0; i++) {
+    if (arr[i] === username) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+}
 
 //The activity we just did is very much how data works in 'the real world'.
